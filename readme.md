@@ -63,7 +63,7 @@ create custom_text.txt with ONLY words from unique_words.txt
 full command with numeration of outputs:
 COUNTER=0; while read -ra line; do for word in "${line[@]}";
 do COUNTER=$[COUNTER + 1] COUNTER_PRINT="$(printf '%03d' ${COUNTER})"
-videogrep --input myvideo.mp4 --output  "${COUNTER_PRINT}${word}".mp4 --max-clips 1 --search "\b${word}\b";
+videogrep --input myvideo.mp4 --output  ~/video-recutter/combiner/"${COUNTER_PRINT}${word}".mp4 --max-clips 1 --search "\b${word}\b";
  done;
  done < custom_text.txt
 
