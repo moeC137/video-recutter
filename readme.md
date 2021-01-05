@@ -70,7 +70,7 @@ videogrep --input myvideo.mp4 --output  ~/video-recutter/combiner/"${COUNTER_PRI
 (with 00 front zero padding)
 
 stitching everything in the folder together in ffmpeg:
-
+cd combiner &&
 for f in *.mp4 ; do echo file \'$f\' >> list.txt; done && ffmpeg -f concat -safe 0 -i list.txt -c copy stitched-video.mp4 && rm list.txt
 
 (copy this from RAW file else some \\\\\ are missing!)
