@@ -20,7 +20,10 @@ cat myfile | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr
 
 ("sort -n" for non reverse)
 
+videogreping for multiple exact words:
+videogrep --input input.mp4 --output output.mp4 --search '\bword1\b|\bword2\b|\bword3\b' 
 
+("\b" regex for exact string matching)
 
 Workflow:
 
