@@ -54,6 +54,9 @@ videogrep --input merz2.mp4 --output  "${COUNTER_PRINT}${word}".mp4 --max-clips 
 
 stitching everything in the folder together in ffmpeg:
 for f in *.mp4 ; do echo file \'$f\' >> list.txt; done && ffmpeg -f concat -safe 0 -i list.txt -c copy stitched-video.mp4 && rm list.txt
+for f in *.mp4 ; do echo file \'$f\' >> list.txt; done && ffmpeg -f concat -safe 0 -i list.txt -c copy stitched-video.mp4 && rm list.txt
+for f in *.mp4 ; do echo file \'$f\' >> list.txt; done && ffmpeg -f concat -safe 0 -i list.txt -c copy stitched-video.mp4 && rm list.txt
+
 
 (it doses in in alphabetcal order....so i need to add a counter to the naming in the videograp loop)
 
