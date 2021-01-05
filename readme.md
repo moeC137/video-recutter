@@ -25,7 +25,7 @@ python3 srt_to_txt.py myvideo.srt
 (this generates the myvideo.txt)
 
 getting uniqe words from text:
-cat myvideo.txt | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr
+cat myvideo.txt | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr  > unique_words.txt
 
 ("sort -n" for non reverse)
 
@@ -34,7 +34,10 @@ videogrep --input input.mp4 --output output.mp4 --search '\bword1\b|\bword2\b|\b
 
 (use --padding for adding extra ms to the clips)
 ("\b" regex for exact string matching)
-
+###########################################################
+###########################################################
+outdated
+##########################################################
 getting single words from the custom text file:
 tr -cs 'A-Za-z_' '[\n*]' < custom_text_file.txt
 
@@ -51,13 +54,18 @@ done < custom_text_file.txt
 
 full command:
 while read -ra line; do for word in "${line[@]}"; do videogrep --input input.mp4 --output $word.mp4 --max-clips 1 --search "\b${word}\b"; done; done < text_test_file.txt
+###########################################################################
+###########################################################################
+
+create custom_text.txt with ONLY words from unique_words.txt
+
 
 full command with numeration of outputs:
 COUNTER=0; while read -ra line; do for word in "${line[@]}";
 do COUNTER=$[COUNTER + 1] COUNTER_PRINT="$(printf '%03d' ${COUNTER})"
-videogrep --input merz2.mp4 --output  "${COUNTER_PRINT}${word}".mp4 --max-clips 1 --search "\b${word}\b";
+videogrep --input myvideo.mp4 --output  "${COUNTER_PRINT}${word}".mp4 --max-clips 1 --search "\b${word}\b";
  done;
- done < text_test_file.txt
+ done < custom_text.txt
 
 (with 00 front zero padding)
 
