@@ -40,9 +40,9 @@ done < custom_text_file.txt
 (replace "echo "$word";" with command to repeat)
 
 full command:
-while read -ra line; do for word in "${line[@]}"; do videogrep --input input.mp4 --output $word.mp4 --max-clips 1 --search "$word"; done; done < text_test_file.txt
+while read -ra line; do for word in "${line[@]}"; do videogrep --input input.mp4 --output $word.mp4 --max-clips 1 --search "\b${word}\b"; done; done < text_test_file.txt
 
-(command works but \b...\b regex isnt working anymore)
+
 
 
 Workflow:
