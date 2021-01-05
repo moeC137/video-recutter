@@ -43,6 +43,9 @@ done < custom_text_file.txt
 full command:
 while read -ra line; do for word in "${line[@]}"; do videogrep --input input.mp4 --output $word.mp4 --max-clips 1 --search "\b${word}\b"; done; done < text_test_file.txt
 
+full command with numeration of outputs:
+while read -ra line; do for word in "${line[@]}"; do COUNTER=$[COUNTER + 1] && videogrep --input merz2.mp4 --output $COUNTER$word.mp4 --max-clips 1 --search "\b${word}\b"; done; done < text_test_file.txt
+
 
 stitching everything in the folder together in ffmpeg:
 for f in *.mp4 ; do echo file \'$f\' >> list.txt; done && ffmpeg -f concat -safe 0 -i list.txt -c copy stitched-video.mp4 && rm list.txt
