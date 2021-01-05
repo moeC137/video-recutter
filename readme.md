@@ -44,7 +44,10 @@ full command:
 while read -ra line; do for word in "${line[@]}"; do videogrep --input input.mp4 --output $word.mp4 --max-clips 1 --search "\b${word}\b"; done; done < text_test_file.txt
 
 
+stitching everything in the folder together in ffmpeg:
+for f in *.mp4 ; do echo file \'$f\' >> list.txt; done && ffmpeg -f concat -safe 0 -i list.txt -c copy stitched-video.mp4 && rm list.txt
 
+(it doses in in alphabetcal order....so i need to add a counter to the naming in the videograp loop)
 
 Workflow:
 
