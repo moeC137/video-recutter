@@ -15,8 +15,17 @@ https://github.com/antiboredom/videogrep
 extracting plaintext from .srt:
 https://gist.github.com/ndunn219/62263ce1fb59fda08656be7369ce329b#file-srt_to_txt-py
 
+
+python3 test_srt.py  myvideo.mp4 > myvideo.srt
+
+(its important that the .mp4 and the .srt have THE SAME name or videogrep wont fint the .srt)
+
+python3 srt_to_txt.py myvideo.srt
+
+(this generates the myvideo.txt)
+
 getting uniqe words from text:
-cat myfile | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr
+cat myvideo.txt | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr
 
 ("sort -n" for non reverse)
 
