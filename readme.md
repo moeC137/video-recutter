@@ -28,6 +28,18 @@ videogrep --input input.mp4 --output output.mp4 --search '\bword1\b|\bword2\b|\b
 getting single words from the custom text file:
 tr -cs 'A-Za-z_' '[\n*]' < custom_text_file.txt
 
+alternativ:
+while read -ra line; 
+do
+    for word in "${line[@]}";
+    do
+        echo "$word";
+    done;
+done < custom_text_file.txt
+
+(replace "echo "$word";" with command to repeat)
+
+
 Workflow:
 
 1. Start script >> welcoming message "paste youtube link here"
