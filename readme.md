@@ -12,6 +12,16 @@ https://github.com/agermanidis/autosub
 Recuting the video with:
 https://github.com/antiboredom/videogrep
 
+extracting plaintext from .srt:
+https://gist.github.com/ndunn219/62263ce1fb59fda08656be7369ce329b#file-srt_to_txt-py
+
+getting uniqe words from text:
+cat myfile | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr
+
+("sort -n" for non reverse)
+
+
+
 Workflow:
 
 1. Start script >> welcoming message "paste youtube link here"
