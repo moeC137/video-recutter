@@ -27,17 +27,24 @@ python3 srt_to_txt.py myvideo.srt
 
 (this generates the myvideo.txt)
 
-getting uniqe words from text:
+getting uniqe words from text with numbers:
+
 cat myvideo.txt | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort -nr  > unique_words.txt
 
 ("sort -n" for non reverse)
 
+getting uniqe words from text WITHOUT numbers:
+
+cat myvideo.txt | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq   > unique_words.txt
+
 sorting words into categories:
+
 while read -ra line; do for word in "${line[@]}"; do sh checker.sh -l German -w $word; done; done < unique_words.txt
 
 
 
 videogreping for multiple exact words:
+
 videogrep --input input.mp4 --output output.mp4 --search '\bword1\b|\bword2\b|\bword3\b' 
 
 (use --padding for adding extra ms to the clips)
