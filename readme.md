@@ -15,6 +15,9 @@ https://github.com/antiboredom/videogrep
 extracting plaintext from .srt:
 https://gist.github.com/ndunn219/62263ce1fb59fda08656be7369ce329b#file-srt_to_txt-py
 
+sort unique words for noun, verb, adjective, pronoun, adverb, article, preposition, numeral or conjunction:
+https://github.com/moeC137/wiktionary-curl-wordtype-checker
+
 
 python3 test_srt.py  myvideo.mp4 > myvideo.srt
 
