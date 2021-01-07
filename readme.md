@@ -32,6 +32,11 @@ cat myvideo.txt | grep -o -E '\w+' | tr '[A-Z]' '[a-z]' | sort | uniq -c | sort 
 
 ("sort -n" for non reverse)
 
+sorting words into categories:
+while read -ra line; do for word in "${line[@]}"; do sh checker.sh -l German -w $word; done; done < unique_words.txt
+
+
+
 videogreping for multiple exact words:
 videogrep --input input.mp4 --output output.mp4 --search '\bword1\b|\bword2\b|\bword3\b' 
 
