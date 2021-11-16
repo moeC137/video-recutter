@@ -110,3 +110,8 @@ command for extracting all keword timestamps for a word from multiple .srt :
 grep -B 1 -H  "keyword" * > keywords.txt
 
 combine this with https://github.com/moeC137/youtube-clip-taker to download the keyword from multiple videos.
+
+remove gaps in keywords.txt :
+awk 'NR % 3 != 0'  keywords.txt > keywordsV2.txt
+awk 'NR % 2 != 0'  keywordsV2.txt > keywordsV3.txt
+
