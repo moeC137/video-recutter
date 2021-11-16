@@ -103,3 +103,10 @@ Workflow:
 6. Write text with usable words
 7. Videogrep takes every word, cuts video part and places it in folder
 8. ffmpeq combines all vdieo snippets from folder to final video.
+
+
+
+command for extracting all keword timestamps for a word from multiple .srt :
+grep -B 1 -H  "keyword" * > keywords.txt
+
+combine this with https://github.com/moeC137/youtube-clip-taker to download the keyword from multiple videos.
