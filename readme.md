@@ -117,7 +117,7 @@ awk 'NR % 2 != 0'  keywordsV2.txt > keywordsV3.txt
 
 
 pharse timestamps lines from text document to downloader:
-
+(thx to https://stackoverflow.com/questions/69982768/how-to-repeat-a-command-for-every-line-in-a-textfile-with-given-arguments-from-t?noredirect=1#comment123711347_69982768 )
 #!/bin/bash
 
 infile=$1                                       # input filename
