@@ -131,3 +131,4 @@ while IFS= read -r line; do                     # read the input file assigning 
      echo  < /dev/null sh download_youtube.sh "https://www.youtube.com/watch?v=$vid" "$start" "$stop" "$file"
 done < "$infile"
 
+replace every "," with a "." on the timespamp lines to makes it work wiht milliseconds
