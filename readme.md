@@ -132,3 +132,6 @@ while IFS= read -r line; do                     # read the input file assigning 
 done < "$infile"
 
 replace every "," with a "." on the timespamp lines to makes it work wiht milliseconds
+
+grep for multiple words:
+grep -B 1 -H "wetter\|abend" *  > multi.txt
