@@ -138,3 +138,7 @@ grep -B 1 -H "wetter\|abend" *  > multi.txt
 
 remove lines that are to short:
 sed -r '/^.{,43}$/d'  keywords.txt > keywords2.txt
+
+crop to vertical:
+ffmpeg -i wild.mkv -vf crop=ih*9/16:ih wild_crop.mkv
+
