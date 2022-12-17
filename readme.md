@@ -135,3 +135,6 @@ replace every "," with a "." on the timespamp lines to makes it work wiht millis
 
 grep for multiple words:
 grep -B 1 -H "wetter\|abend" *  > multi.txt
+
+remove lines that are to short:
+sed -r '/^.{,43}$/d'  keywords.txt > keywords2.txt
