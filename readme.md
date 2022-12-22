@@ -142,3 +142,4 @@ sed -r '/^.{,43}$/d'  keywords.txt > keywords2.txt
 crop to vertical:
 ffmpeg -i wild.mkv -vf crop=ih*9/16:ih wild_crop.mkv
 
+Use word_slicer.sh to slice clip into words form custom list. no numeration.
